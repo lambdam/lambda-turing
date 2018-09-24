@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+
+  {% if page.title %}
+    {{ page.title }} - Lambda-Turing
+  {% else %}
+    {{ super() }}
+  {% endif %}
+
+{% endblock title %}
+
+
+{% block header_title %}
+  {{ page.title }} 
+{% endblock header_title %}
+
+
+{% block dev_data %}
+
+  <pre>
+    {{ page | safe | json_encode(pretty=true) | escape }}
+  </pre>
+
+  <pre>
+    {{ __tera_context | escape }}
+  </pre>
+
+{% endblock dev_data %}
+
+
+{% block toc %}
+
+  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+    <span>Table des matières</span>
+  </h6>
+
+  <ul class="nav flex-column">
+    {% for h1 in page.toc %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+        {% if h1.children %}
+          <ul class="nav flex-column ml-4">
+            {% for h2 in h1.children %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock toc %}
+
+
+{% block content %}
+
+  {{ page.content | safe }}
+
+{% endblock content %}

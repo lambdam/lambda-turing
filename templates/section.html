@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}
+
+  {% if section.title %}
+    {{ section.title }} - Lambda-Turing
+  {% else %}
+    {{ super() }}
+  {% endif %}
+
+{% endblock title %}
+
+{% block content %}
+  <div class="cours-summary">
+    {{ section.content | safe }}
+  </div>
+{% endblock content %}
