@@ -38,18 +38,13 @@
 
   <ul class="nav flex-column">
     {% for h1 in page.toc %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{h1.permalink | safe}}">{{ h1.title }}</a>
-        {% if h1.children %}
-          <ul class="nav flex-column ml-4">
-            {% for h2 in h1.children %}
-              <li class="nav-item">
-                <a class="nav-link" href="{{h2.permalink | safe}}">{{ h2.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
+      {% if h1.children %}
+        {% for h2 in h1.children %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
   </ul>
 
