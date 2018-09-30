@@ -45,3 +45,9 @@ var foo = ["10", "10", "10"];
 [Wat](https://www.destroyallsoftware.com/talks/wat) de Garry Bernhardt
 
 <iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x15zw3g" allowfullscreen allow="autoplay"></iframe>
+
+---
+
+Trouver l'histoire de la machine à rayons qui a eu des race conditions.
+
+Topo sur l'augmentation de puissance par le nombre de coeurs -> attrait des langages fonctionnels.
