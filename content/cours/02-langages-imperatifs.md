@@ -8,14 +8,16 @@ weight = 2
 
 ---
 
+## Déclaration de valeurs et cases mémoires
+
 Déclaration et mutation d'un valeur contenue dans une case mémoire.
 
 <pre class="language-klipse-cpp">
 int main()
 {
-  int i = 1;
-  i++;
-  // i = i + 1;
+  int i = 1; // Déclaration d'un variable i dont le contenu est un entier et vaut 1.
+  // i = i + 1; // On incrémente la valeur à partir de sa propre valeur.
+  // i++; // Opérateur spécial pour incrémenter la valeur.
   return i;
 }
 </pre>
@@ -29,9 +31,56 @@ int main()
 {
   int i = 1;
   int *ptr = &i; // Nous déclarons un pointeur qui prend pour valeur l'adresse de i.
-  // i++; // Nous incrémentons la valeur stockée dans la case mémoire i.
+  // *ptr = *ptr + 1; // Nous incrémentons la valeur stockée dans la case mémoire i.
   return *ptr; // Nous retournons la valeur stockée dans la case mémoire.
-}</pre>
+}
+</pre>
+
+---
+
+## Outil fondamental n° 1 : l'itération avec `for`
+
+<pre class="language-klipse-cpp">
+int main()
+{
+  int table[5] = {846, 740, 285, 94, 53};
+  int table_length = sizeof(table) / sizeof(int);
+  int i = 0;
+  int sum = 0;
+
+  for (i = 0 ; i < table_length ; i++)
+  {
+    sum = sum + table[i];
+  }
+  
+  return 0;
+
+  // return sum;
+}
+</pre>
+
+---
+
+## Outil fondamental n° 2 : les conditionnels avec `if`, `then`, `else`
+
+<pre class="language-klipse-cpp">
+int main()
+{
+  int a = 2;
+  int b = 4;
+  int result;
+  
+  /*
+  if(a > b) {
+    result = 2018;
+  } else {
+    result = 2019;
+  }
+  */
+  
+  return result;
+}
+</pre>
 
 ---
 
