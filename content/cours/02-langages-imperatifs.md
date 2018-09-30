@@ -8,9 +8,24 @@ weight = 2
 
 ---
 
+## Les idées fortes
+
+On manipule des cases mémoires à l'aide d'une série d'instructions.
+
+Dans les premiers langages on peut citer :
+
+- Fortran (1954) : le plus ancien langage impératif dit de "haut niveau". Il est toujours utilisé pour le calcul scientifique.
+- C (1972) : le plus connu et le plus utilisé aujourd'hui. Il sert majoritairement pour écrire des systèmes d'exploitation ou des logiciels qui ont besoin de performance.
+
+Et plus récemment :
+
+- Go (2009) : développé par Google, il vise les performances du C avec la simplicité des langages de scripts comme Python.
+- Rust (2006) : développé par Mozilla, il vise les même applications que C mais avec la sécurité d'exécution sur des machines modernes.
+
+
 ## Déclaration de valeurs et cases mémoires
 
-Déclaration et mutation d'un valeur contenue dans une case mémoire.
+Déclaration et mutation d'un valeur contenue dans une case mémoire en C.
 
 <pre class="language-klipse-cpp">
 int main()
@@ -24,7 +39,7 @@ int main()
 
 ---
 
-Manipulation de l'adresse d'une valeur en mémoire (pointeur)
+Manipulation de l'adresse d'une valeur en mémoire (pointeur) en C.
 
 <pre class="language-klipse-cpp">
 int main()
