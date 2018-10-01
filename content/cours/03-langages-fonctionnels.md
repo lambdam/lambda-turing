@@ -28,7 +28,7 @@ Langages fortement typés :
 - OCaml (et sa syntaxe alternative créée chez Facebook, ReasonML)
 - Haskell
 
-Ce sont des langages plus récents. Standard ML est apparu en 1984.
+Ce sont des langages plus récents. Standard ML (le premier) est apparu en 1984.
 
 
 ## Expliquer LISP en deux lignes
@@ -40,7 +40,7 @@ Un programme est composé :
 - soit de termes atomiques (entiers, flottants, booléens, symboles, chaines de caractères, fonction, ...)
 - soit d'une liste qui représente un appel de fonction : `(fonction arg1 arg2 arg3 ...)`
 
-Il n'y a par exemple pas de notion de précédence de la multiplication sur l'addition : les parenthèse imposent naturellement un ordre d'exécution.
+Il n'y a par exemple pas de notion de précédence de la multiplication sur l'addition : les parenthèses imposent naturellement un ordre d'exécution.
 
 ```
 Maths         LISP
@@ -140,3 +140,5 @@ let rec sum_table table accumulator =
 
 let result = sum_table [1; 2; 3; 4; 5] 0
 </pre>
+
+---

@@ -98,4 +98,6 @@ Un des gros reproches fait à ces langages est que même si la structuration en 
 
 Les gros systèmes objet sont réputés durs à faire évoluer.
 
-Il est à noter aussi que la plupart des langages de scripts (langages non-compilés "légers" et accessibles) offrent la possibilité de faire de l'orienté objet.
+Il est à noter aussi que la plupart des langages de scripts (langages non-compilés "légers" et accessibles : Python, Ruby, Javascript, Perl...) offrent la possibilité de faire de l'orienté objet.
+
+---

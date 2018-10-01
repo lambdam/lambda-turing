@@ -12,7 +12,7 @@ weight = 1
 
 Question fondamentale : "Qu'est-ce qui est calculable ?" (Wikipedia : [Calculabilité](https://fr.wikipedia.org/wiki/Calculabilit%C3%A9))
 
-Ou encore : "Peut-on automatiser la transformation d'informations grâce à des règles ?"
+Ou encore : "Peut-on automatiser la transformation d'informations grâce à une série des règles ?"
 
 Selon Wikipedia ([Thèse de Church](https://fr.wikipedia.org/wiki/Th%C3%A8se_de_Church)), nous pouvons lire la définition suivante :
 

@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link href="{{ config.base_url | safe }}css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">
+      h2 {
+        margin-top: 1.5rem;
+      }
+      body {
+        font-size: 1rem;
+      }
+      pre {
+        padding: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -91,12 +103,18 @@
 
     <script>
       window.klipse_settings = {
-        selector_eval_js: '.language-klipse-eval-js',
-        selector_eval_cpp: '.language-klipse-cpp'
+        selector: ".language-klipse-clojure",
+        selector_eval_js: ".language-klipse-eval-js",
+        selector_eval_cpp: ".language-klipse-cpp",
+        selector_eval_reason_3: ".language-klipse-reason3",
+        selector_eval_ocaml: ".language-klipse-ocaml",
+        selector_eval_ruby: ".language-klipse-eval-ruby",
+        selector_eval_python_client: ".language-klipse-python",
+        selector_eval_php: ".language-klipse-eval-php"
       };
     </script>
 
-    <script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+    <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.5.2"></script>
 
   </body>
 </html>

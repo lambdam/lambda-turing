@@ -41,7 +41,7 @@
       {% if h1.children %}
         {% for h2 in h1.children %}
           <li class="nav-item">
-            <a class="nav-link" href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+            <a class="nav-link" href="{{h2.permalink | safe}}">{{ h2.title | safe }}</a>
           </li>
         {% endfor %}
       {% endif %}
