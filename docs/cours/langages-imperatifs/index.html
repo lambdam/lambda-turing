@@ -17,6 +17,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link href="https://0tus.github.io/lambda-turing/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">
+      h2 {
+        margin-top: 1.5rem;
+      }
+      body {
+        font-size: 1rem;
+      }
+      pre {
+        padding: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -31,7 +43,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar"  style="overflow: scroll;">
           <div class="sidebar-sticky">
 
             
@@ -73,6 +85,36 @@
                     </a>
                   </li>
                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;securiser-le-code&#x2F;">
+                      6 - Sécuriser le code
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;liste-des-principaux-langages&#x2F;">
+                      7 - Liste des principaux langages
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;les-geeks&#x2F;">
+                      8 - Les geeks
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;libs-framework-cms&#x2F;">
+                      9 - Libs, framework et CMS
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;problemes-d-algo&#x2F;">
+                      10 - Problèmes d&#x27;algo
+                    </a>
+                  </li>
+                
               </ul>
 
             
@@ -85,10 +127,25 @@
 
   <ul class="nav flex-column">
     
-      <li class="nav-item">
-        <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-imperatifs/#interaction-avec-des-langages-imperatifs">Interaction avec des langages impératifs</a>
+      
         
-      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-imperatifs/#les-idees-fortes">Les idées fortes</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-imperatifs/#declaration-de-valeurs-et-cases-memoires">Déclaration de valeurs et cases mémoires</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-imperatifs/#outil-fondamental-ndeg-1-l-iteration-avec">Outil fondamental n° 1 : l'itération avec <code>for</code></a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-imperatifs/#outil-fondamental-ndeg-2-les-conditionnels-avec">Outil fondamental n° 2 : les conditionnels avec <code>if</code>, <code>then</code>, <code>else</code></a>
+          </li>
+        
+      
     
   </ul>
 
@@ -103,28 +160,83 @@
 
   <h1 id="interaction-avec-des-langages-imperatifs">Interaction avec des langages impératifs</h1>
 <hr />
-<p>Déclaration et mutation d'un valeur contenue dans une case mémoire.</p>
+<h2 id="les-idees-fortes">Les idées fortes</h2>
+<p>On manipule des cases mémoires à l'aide d'une série d'instructions.</p>
+<p>Dans les premiers langages on peut citer :</p>
+<ul>
+<li>Fortran (1954) : le plus ancien langage impératif dit de &quot;haut niveau&quot;. Il est toujours utilisé pour le calcul scientifique.</li>
+<li>C (1972) : le plus connu et le plus utilisé aujourd'hui. Il sert majoritairement pour écrire des systèmes d'exploitation ou des logiciels qui ont besoin de performance.</li>
+</ul>
+<p>Et plus récemment :</p>
+<ul>
+<li>Go (2009) : développé par Google, il vise les performances du C avec la simplicité des langages de scripts comme Python.</li>
+<li>Rust (2006) : développé par Mozilla, il vise les même applications que C mais avec la sécurité d'exécution sur des machines modernes.</li>
+</ul>
+<h2 id="declaration-de-valeurs-et-cases-memoires">Déclaration de valeurs et cases mémoires</h2>
+<p>Déclaration et mutation d'un valeur contenue dans une case mémoire en C.</p>
 <pre class="language-klipse-cpp">
 int main()
 {
-  int i = 1;
-  i++;
-  // i = i + 1;
+  int i = 1; // Déclaration d'un variable i dont le contenu est un entier et vaut 1.
+  // i = i + 1; // On incrémente la valeur à partir de sa propre valeur.
+  // i++; // Opérateur spécial pour incrémenter la valeur.
   return i;
 }
 </pre>
 <hr />
-<p>Manipulation de l'adresse d'une valeur en mémoire (pointeur)</p>
+<p>Manipulation de l'adresse d'une valeur en mémoire (pointeur) en C.</p>
 <pre class="language-klipse-cpp">
 int main()
 {
   int i = 1;
   int *ptr = &i; // Nous déclarons un pointeur qui prend pour valeur l'adresse de i.
-  // i++; // Nous incrémentons la valeur stockée dans la case mémoire i.
+  // *ptr = *ptr + 1; // Nous incrémentons la valeur stockée dans la case mémoire i.
   return *ptr; // Nous retournons la valeur stockée dans la case mémoire.
-}</pre>
+}
+</pre>
+<hr />
+<h2 id="outil-fondamental-ndeg-1-l-iteration-avec">Outil fondamental n° 1 : l'itération avec <code>for</code></h2>
+<pre class="language-klipse-cpp">
+int main()
+{
+  int table[5] = {846, 740, 285, 94, 53};
+  int table_length = sizeof(table) / sizeof(int);
+  int i = 0;
+  int sum = 0;
+
+  for (i = 0 ; i < table_length ; i++)
+  {
+    sum = sum + table[i];
+  }
+  
+  return 0;
+
+  // return sum;
+}
+</pre>
+<hr />
+<h2 id="outil-fondamental-ndeg-2-les-conditionnels-avec">Outil fondamental n° 2 : les conditionnels avec <code>if</code>, <code>then</code>, <code>else</code></h2>
+<pre class="language-klipse-cpp">
+int main()
+{
+  int a = 2;
+  int b = 4;
+  int result;
+  
+  /*
+  if(a > b) {
+    result = 2018;
+  } else {
+    result = 2019;
+  }
+  */
+  
+  return result;
+}
+</pre>
 <hr />
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_Nua3Cjdik0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<hr />
 
 
 
@@ -148,12 +260,18 @@ int main()
 
     <script>
       window.klipse_settings = {
-        selector_eval_js: '.language-klipse-eval-js',
-        selector_eval_cpp: '.language-klipse-cpp'
+        selector: ".language-klipse-clojure",
+        selector_eval_js: ".language-klipse-eval-js",
+        selector_eval_cpp: ".language-klipse-cpp",
+        selector_eval_reason_3: ".language-klipse-reason3",
+        selector_eval_ocaml: ".language-klipse-ocaml",
+        selector_eval_ruby: ".language-klipse-eval-ruby",
+        selector_eval_python_client: ".language-klipse-python",
+        selector_eval_php: ".language-klipse-eval-php"
       };
     </script>
 
-    <script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+    <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.5.2"></script>
 
   </body>
 </html>

@@ -9,7 +9,7 @@
     
 
   
-    Langages objet - Lambda-Turing
+    Sécuriser le code - Lambda-Turing
   
 
 
@@ -36,7 +36,7 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="https://0tus.github.io/lambda-turing/">Lambda-Turing</a>
       <div class="h4 text-white mr-3">
         
-  Langages objet 
+  Sécuriser le code 
 
       </div>
     </nav>
@@ -130,19 +130,11 @@
       
         
           <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#idees-fortes">Idées fortes</a>
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/securiser-le-code/#le-typage">Le typage</a>
           </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#l-encapsulation">L'encapsulation</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#l-heritage">L'héritage</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#les-limites-de-l-oriente-objet">Les limites de l'orienté objet</a>
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/securiser-le-code/#les-tests">Les tests</a>
           </li>
         
       
@@ -158,88 +150,65 @@
 
           
 
-  <h1 id="les-langages-orientes-objet">Les langages orientés objet</h1>
-<h2 id="idees-fortes">Idées fortes</h2>
-<p>La programmation orientée objet apporte des abstractions destinées à structurer les projets.</p>
-<p>Il ne s'agit plus de gérer des cases mémoires ou de déclarer des fonctions que l'on appliquera sur des donnés mais de déclarer des <strong>classes</strong> qui serviront de modèle à des objets qui représenteront des &quot;individus&quot; d'une classe.</p>
+  <h1 id="securiser-le-code">Sécuriser le code</h1>
+<h2 id="le-typage">Le typage</h2>
+<p>Le typage consiste à associer à des valeurs ou des expressions des type (nombre, texte, tableau de text...). Cela permet de détecter dès la compilation (traduction du code en langage machine) un certain nombre d'erreurs.</p>
+<p>Traditionnellement les langages impératifs sont &quot;simplement&quot; typés. Les langages fonctionnels, lorsqu'ils sont typés, sont dits &quot;fortement&quot; typés. Une comilation réussie équivaut à une sorte de preuve mathématique que des problèmes liés aux types des expression n'apparaitront pas.</p>
+<p>OCaml :</p>
+<pre class="language-klipse-ocaml">
+let print_my_age (name: string) (age: int) : string =
+  "M. " ^ name ^ " a " ^ age ^ " ans"
+
+(*
+let result = print_my_age "Felix Le Chat" "25"
+*)
+</pre>
+<hr />
+<p>Ainsi une lourde tendance dans le monde Javascript tend à ajouter des systèmes de typage ou à utiliser des langages typés qui compilent vers du Javascript.</p>
+<p>Les systèmes de typage progressifs les plus connus sont :</p>
 <ul>
-<li><strong>L'encapsulation</strong> : on cache l'état interne de l'objet et l'on expose des interfaces pour interagir avec l'objet.</li>
-<li><strong>L'héritage</strong> : on peut déclarer des propriétés sur une classe parente qui seront réutilisées par des sous-classes enfants. L'idée est très proche de la classification des espèces. On peut déclarer des propriétés communes aux mammifères et s'appuyer dessus pour décrire d'un côté les propriétés des félins et de l'autre les propriétés des canidés.</li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a> créé par Microsoft.</li>
+<li><a href="https://flow.org/">Flow</a> créé par Facebook.</li>
 </ul>
-<p>Au même titre que la fonction en programmation fonctionnelle, ce sont des abstractions. Il n'y a pas de correspondance au niveau de la machine physique.</p>
-<h2 id="l-encapsulation">L'encapsulation</h2>
-<pre class="language-klipse-eval-ruby">
-# Modèle de rectangle
-class Rectangle
-  def initialize(width, height)
-    @width = width
-    @height = height
-  end
-  
-  def width
-    @width
-  end
-  
-  def height
-    @height
-  end
-  
-  def diagonal
-    Math::sqrt(@width**2 + @height**2)
-  end
-  
-  def surface
-    @width * @height
-  end
-end
+<p>Et les langages fortement typés les plus en vogue sont :</p>
+<ul>
+<li><a href="http://elm-lang.org/">Elm</a> créé par un seul développeur.</li>
+<li><a href="https://reasonml.github.io/">ReasonML</a> inité par Facebook sur la base d'OCaml.</li>
+</ul>
+<h2 id="les-tests">Les tests</h2>
+<p>L'idée des tests est de &quot;mettre en situation&quot; le code métier.</p>
+<p>On va donc le plus souvent imaginer des cas d'utilisation et &quot;forger&quot; de la donnée.</p>
+<p>Cela permet de valider au moment de la création du code qu'il se comporte bien comme attendu et d'autre part qu'au fil de
+l'évolution de celui-ci, ce qui est modifié continue à se comporter convenablement dans les cas mis en oeuvre dans les tests.</p>
+<p>Le hic, c'est qu'il est dur de prévoir <strong>tous</strong> les cas...</p>
+<hr />
+<p>ClojureScript :</p>
+<pre class="language-klipse-clojure">
+(def fake-geo-data
+  ;lat.      long.    temp.(°Fahrenheit)
+  [48.862725 2.287592 78])
 
-# Un rectangle particulier (un objet)
-t1 = Rectangle.new(3, 4)
+(defn temp-to-celsius [data]
+  (-> data
+      (get 2)
+      (- 32)
+      (/ 1.8)
+      (js/Math.round)))
 
-[t1.width, t1.height, t1.diagonal, t1.surface]
+(assert
+  (= (temp-to-celsius fake-geo-data) 26))
+
+;; Que se passe-t-il lorsque la donnée est corrupue et qu'il n'y a pas d'information de température ?
+;; Par exemple avec [32.7 3.89 nil] ?
+
+nil
 </pre>
-<p>D'un point de vue extérieur, une fois que l'on a l'objet sous la main, je ne me soucie plus de savoir comment est stocké l'information à &quot;l'intérieur&quot; de l'objet.</p>
-<h2 id="l-heritage">L'héritage</h2>
-<pre class="language-klipse-eval-ruby">
-
-class Mammal
-  def initialize(name)
-    @name = name
-  end
-  
-  def name
-    @name
-  end
-end
-
-class Dog < Mammal
-  def make_noise
-    "#{@name} says: Ouaff"
-  end
-end
-
-class Cat < Mammal
-  def make_noise
-    "#{@name} says: Miaou"
-  end
-end
-
-medor = Dog.new("Medor")
-
-felix = Cat.new("Felix")
-
-# Fais parler le chien
-
-# Fais parler le chat
-
-"rien"
-
-</pre>
-<h2 id="les-limites-de-l-oriente-objet">Les limites de l'orienté objet</h2>
-<p>Les deux langages objets les plus connus actuellement sont C++ (1983) et Java (1995).</p>
-<p>Un des gros reproches fait à ces langages est que même si la structuration en classes semble intuitive (on pense aux espèces), l'abstraction apporte son lot de cas particulier. Un cas connu est le choix, au niveau du langage, du simple héritage (une classe a exactement un parent) ou du multi-héritage (une classe peut avoir plusieurs parents). On pense à l'ornithorynque...</p>
-<p>Les gros systèmes objet sont réputés durs à faire évoluer.</p>
-<p>Il est à noter aussi que la plupart des langages de scripts (langages non-compilés &quot;légers&quot; et accessibles : Python, Ruby, Javascript, Perl...) offrent la possibilité de faire de l'orienté objet.</p>
+<hr />
+<p>Les tests sont à double tranchant :</p>
+<ul>
+<li>Le bon côté est qu'il peuvent aider à poser le code métier en posant d'emblée les résultats attendus ainsi qu'à éviter des régressions au fil de l'évolution d'un programme.</li>
+<li>Le mauvais est qu'ils ajoutent du code, parfois beaucoup de code. Faire évoluer le programme peut devenir lourd. Pire, il peut y avoir des bugs dans les tests eux-mêmes...</li>
+</ul>
 <hr />
 
 

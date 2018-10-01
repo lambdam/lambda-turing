@@ -17,6 +17,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link href="https://0tus.github.io/lambda-turing/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">
+      h2 {
+        margin-top: 1.5rem;
+      }
+      body {
+        font-size: 1rem;
+      }
+      pre {
+        padding: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -31,7 +43,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar"  style="overflow: scroll;">
           <div class="sidebar-sticky">
 
             
@@ -73,6 +85,36 @@
                     </a>
                   </li>
                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;securiser-le-code&#x2F;">
+                      6 - Sécuriser le code
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;liste-des-principaux-langages&#x2F;">
+                      7 - Liste des principaux langages
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;les-geeks&#x2F;">
+                      8 - Les geeks
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;libs-framework-cms&#x2F;">
+                      9 - Libs, framework et CMS
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;problemes-d-algo&#x2F;">
+                      10 - Problèmes d&#x27;algo
+                    </a>
+                  </li>
+                
               </ul>
 
             
@@ -85,26 +127,25 @@
 
   <ul class="nav flex-column">
     
-      <li class="nav-item">
-        <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#rapide-historique">Rapide historique</a>
+      
         
-          <ul class="nav flex-column ml-4">
-            
-              <li class="nav-item">
-                <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#langages-imperatifs-turing">Langages impératifs (Turing)</a>
-              </li>
-            
-              <li class="nav-item">
-                <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#langages-fonctionnels-church">Langages fonctionnels (Church)</a>
-              </li>
-            
-              <li class="nav-item">
-                <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#programmation-objet">Programmation objet</a>
-              </li>
-            
-          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#la-question-de-la-calculabilite">La question de la calculabilité</a>
+          </li>
         
-      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#de-la-question-theorique-a-la-creation-de-machines-a-calculer">De la question théorique à la création de machines à calculer</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#la-machine-de-turing">La machine de Turing</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/historique/#langages-fonctionnels-church">Langages fonctionnels (Church)</a>
+          </li>
+        
+      
     
   </ul>
 
@@ -119,14 +160,67 @@
 
   <h1 id="rapide-historique">Rapide historique</h1>
 <hr />
-<h2 id="langages-imperatifs-turing">Langages impératifs (Turing)</h2>
-<p>Machine de Turing...</p>
-<p>WIP</p>
+<h2 id="la-question-de-la-calculabilite">La question de la calculabilité</h2>
+<p>Question fondamentale : &quot;Qu'est-ce qui est calculable ?&quot; (Wikipedia : <a href="https://fr.wikipedia.org/wiki/Calculabilit%C3%A9">Calculabilité</a>)</p>
+<p>Ou encore : &quot;Peut-on automatiser la transformation d'informations grâce à une série des règles ?&quot;</p>
+<p>Selon Wikipedia (<a href="https://fr.wikipedia.org/wiki/Th%C3%A8se_de_Church">Thèse de Church</a>), nous pouvons lire la définition suivante :</p>
+<p><em>La thèse est formulée en disant que des règles formelles de calcul (machines de Turing, les fonctions λ-définissables, les fonctions récursives…) formalisent correctement la notion de méthode effective de calcul, ou de calculabilité.</em></p>
+<p><em>On considère généralement[réf. nécessaire] que la notion intuitive de méthode effective de calcul correspond aux caractéristiques suivantes :</em></p>
+<ol>
+<li><em>l'algorithme consiste en un ensemble fini d'instructions simples et précises qui sont décrites avec un nombre limité de symboles ;</em></li>
+<li><em>l'algorithme doit toujours produire le résultat en un nombre fini d'étapes ;</em></li>
+<li><em>l'algorithme peut en principe être suivi par un humain avec seulement du papier et un crayon ;</em></li>
+<li><em>l'exécution de l'algorithme ne requiert pas d'intelligence de l'humain sauf celle qui est nécessaire pour comprendre et exécuter les instructions.</em></li>
+</ol>
+<p>Plusieurs approches ont vu le jour :</p>
+<ul>
+<li>les fonctions récursives ;</li>
+<li>le lambda-calcul ;</li>
+<li>les machines de Turing ;</li>
+<li>les machines à compteurs ;</li>
+<li>les automates cellulaires ;</li>
+<li>les circuits booléens ;</li>
+<li>les machines parallèle à accès arbitraire ou PRAM ;</li>
+<li>les Random access machines ou RAM ;</li>
+<li>les machines de Blum-Shub-Smale.</li>
+</ul>
+<h2 id="de-la-question-theorique-a-la-creation-de-machines-a-calculer">De la question théorique à la création de machines à calculer</h2>
+<p>Deux approches ont durablement marqué la manière dont nous interagissons avec les ordinateurs :</p>
+<ul>
+<li>La machine d'Alan Turing qui pose les fondements des langages dit impératifs.</li>
+<li>Le lambda-calcul d'Alonzo Church qui pose les fondements des langages dits fonctionnels.</li>
+</ul>
+<h2 id="la-machine-de-turing">La machine de Turing</h2>
+<p>Un ruban infini, des case qui stockent des informations et une tête de lecture qui peut lire et écrire sur ces cases.</p>
+<p><img src="http://vincent-le-corre.fr/wp-content/uploads/2011/11/Ruban-machine-de-Turing1.jpg" alt="Machine de Turing simple" /></p>
+<hr />
+<p>Un peu plus précisément, <a href="https://fr.wikipedia.org/wiki/Machine_de_Turing#D%C3%A9finition">une machine de Turing se compose de</a> :</p>
+<ul>
+<li>Un ruban infini.</li>
+<li>Une tête de lecture/écriture.</li>
+<li>Un registre d'état.</li>
+<li>Une table d'actions.</li>
+</ul>
+<p><img src="https://delmas-rigoutsos.nom.fr/documents/YDelmas-ordinateurs_et_systemes/resources/turing+1.png" alt="Machine de Turing complète" /></p>
+<hr />
+<p>Et un petit exemple de machine de Turing en action.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FTSAiF9AHN4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<hr />
+<p>L'ordinateur moderne est très similaire dans sa réalisation (Wikipedia : <a href="https://fr.wikipedia.org/wiki/Processeur#Les_op%C3%A9rations_du_processeur">Les opération du processeur</a>)</p>
+<p><img src="http://prof.bpesquet.fr/images/content/memoire-echanges-proc.png" alt="L'ordinateur" /></p>
 <h2 id="langages-fonctionnels-church">Langages fonctionnels (Church)</h2>
-<p>Lambda calcul...</p>
-<p>WIP</p>
-<h2 id="programmation-objet">Programmation objet</h2>
-<p>WIP</p>
+<p>Le lambda-calcul est une approche plus abstraite de la calculabilité centré sur la fonction, au sens mathématique du terme.</p>
+<p>Les idées fortes :</p>
+<ul>
+<li>On applique des fonctions à des termes.</li>
+<li>Une fonction peut elle-même être le terme d'une autre fonction.</li>
+<li>Les termes sont regroupés en expressions.</li>
+<li>Toute expression retourne une valeur ou une autre expression.</li>
+</ul>
+<p><img class="img-fluid" style="max-width: 500px;" alt="lambda expression 1" src="http://1.bp.blogspot.com/-0hF-lQX74Xg/U7eUQXA-0XI/AAAAAAAADyM/D-Z_XbxZyzM/s1600/lambda1.png"/></p>
+<p><img class="img-fluid" style="max-width: 500px;" alt="lambda expression 2" src="http://4.bp.blogspot.com/-5_DZOH_aqGc/U7eWeeGKSxI/AAAAAAAADyY/O3wr5_XXbZs/s1600/lambda2.png"/></p>
+<p>Les images sont tirées de cet <a href="http://palmstroem.blogspot.com/2012/05/lambda-calculus-for-absolute-dummies.html">article d'introduction au lambda-calcul</a> (en anglais)</p>
+<hr />
 
 
 
@@ -150,12 +244,18 @@
 
     <script>
       window.klipse_settings = {
-        selector_eval_js: '.language-klipse-eval-js',
-        selector_eval_cpp: '.language-klipse-cpp'
+        selector: ".language-klipse-clojure",
+        selector_eval_js: ".language-klipse-eval-js",
+        selector_eval_cpp: ".language-klipse-cpp",
+        selector_eval_reason_3: ".language-klipse-reason3",
+        selector_eval_ocaml: ".language-klipse-ocaml",
+        selector_eval_ruby: ".language-klipse-eval-ruby",
+        selector_eval_python_client: ".language-klipse-python",
+        selector_eval_php: ".language-klipse-eval-php"
       };
     </script>
 
-    <script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+    <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.5.2"></script>
 
   </body>
 </html>

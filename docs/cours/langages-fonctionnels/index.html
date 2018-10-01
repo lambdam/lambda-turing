@@ -17,6 +17,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link href="https://0tus.github.io/lambda-turing/css/dashboard.css" rel="stylesheet">
+
+    <style type="text/css">
+      h2 {
+        margin-top: 1.5rem;
+      }
+      body {
+        font-size: 1rem;
+      }
+      pre {
+        padding: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -31,7 +43,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar"  style="overflow: scroll;">
           <div class="sidebar-sticky">
 
             
@@ -73,6 +85,36 @@
                     </a>
                   </li>
                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;securiser-le-code&#x2F;">
+                      6 - Sécuriser le code
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;liste-des-principaux-langages&#x2F;">
+                      7 - Liste des principaux langages
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;les-geeks&#x2F;">
+                      8 - Les geeks
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;libs-framework-cms&#x2F;">
+                      9 - Libs, framework et CMS
+                    </a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours&#x2F;problemes-d-algo&#x2F;">
+                      10 - Problèmes d&#x27;algo
+                    </a>
+                  </li>
+                
               </ul>
 
             
@@ -85,10 +127,33 @@
 
   <ul class="nav flex-column">
     
-      <li class="nav-item">
-        <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#les-langages-fonctionnels">Les langages fonctionnels</a>
+      
         
-      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#les-idees-fortes">Les idées fortes</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#les-langages-emblematiques">Les langages emblématiques</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#expliquer-lisp-en-deux-lignes">Expliquer LISP en deux lignes</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#l-immutabilite">L'immutabilité.</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#les-fonctions-anonymes">Les fonctions anonymes</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-fonctionnels/#iterer-sans">Itérer sans <code>for</code> : les fonctions récursives</a>
+          </li>
+        
+      
     
   </ul>
 
@@ -102,7 +167,112 @@
           
 
   <h1 id="les-langages-fonctionnels">Les langages fonctionnels</h1>
-<p>TODO: exemple avec OCaml/ReasonML</p>
+<h2 id="les-idees-fortes">Les idées fortes</h2>
+<ul>
+<li>Les valeurs manipulées sont majoritairement ou exclusivement immutables.</li>
+<li>Les outils de base sont les fonctions et les données.</li>
+<li>Les fonctions peuvent être de la donnée (une fonction peut être un paramètre d'une autre fonction et être executée plus tard).</li>
+</ul>
+<h2 id="les-langages-emblematiques">Les langages emblématiques</h2>
+<p>Langages dynamiques : les LISP (LISt Processing). Il existe une myriade de variantes :</p>
+<ul>
+<li>Scheme (très épuré)</li>
+<li>Common Lisp (très complet)</li>
+<li>Clojure (moderne et plus largement immutable)</li>
+</ul>
+<p>C'est historiquement le premier langage fonctionnel créé. Il a été inventé au MIT en 1958.</p>
+<p>Langages fortement typés :</p>
+<ul>
+<li>Standard ML</li>
+<li>OCaml (et sa syntaxe alternative créée chez Facebook, ReasonML)</li>
+<li>Haskell</li>
+</ul>
+<p>Ce sont des langages plus récents. Standard ML (le premier) est apparu en 1984.</p>
+<h2 id="expliquer-lisp-en-deux-lignes">Expliquer LISP en deux lignes</h2>
+<p>La grammaire est la plus épurée de tous les langages. Elle tient virtuellement en deux lignes .</p>
+<p>Un programme est composé :</p>
+<ul>
+<li>soit de termes atomiques (entiers, flottants, booléens, symboles, chaines de caractères, fonction, ...)</li>
+<li>soit d'une liste qui représente un appel de fonction : <code>(fonction arg1 arg2 arg3 ...)</code></li>
+</ul>
+<p>Il n'y a par exemple pas de notion de précédence de la multiplication sur l'addition : les parenthèses imposent naturellement un ordre d'exécution.</p>
+<pre style="background-color:#2b303b">
+<span style="background-color:#2b303b;color:#c0c5ce;">Maths         LISP
+</span><span style="background-color:#2b303b;color:#c0c5ce;">1 + 2 * 3 &lt;=&gt; (+ 1 (* 2 3))
+</span></pre><h2 id="l-immutabilite">L'immutabilité.</h2>
+<p>En C (mutabilité)</p>
+<pre class="language-klipse-cpp">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  int table[2] = {1, 3};
+  table[0] = 42;
+  // printf("base = {%d, %d}", table[0], table[1]);
+  return 0;
+}
+</pre>
+<hr />
+<p>En Clojure (immutabilité)</p>
+<pre class="language-klipse-clojure">
+(def table [1 3])
+
+(assoc table 0 42)
+
+;; table
+
+"rien"
+</pre>
+<h2 id="les-fonctions-anonymes">Les fonctions anonymes</h2>
+<pre class="language-klipse-clojure">
+(defn add5 [x]
+  (+ x 5))
+
+(defn apply-f-to-x [f x]
+  (f x))
+  
+(apply-f-to-x add5 2013) 
+</pre>
+<h2 id="iterer-sans">Itérer sans <code>for</code> : les fonctions récursives</h2>
+<p>En Clojure</p>
+<pre class="language-klipse-clojure">
+(defn sum-table [table accumulator]
+  (if (empty? table)
+    ;; then
+    accumulator
+    ;; else
+    (sum-table (rest table)
+               (+ accumulator (first table)))))
+
+(sum-table [1 2 3 4 5] 0)
+</pre>
+<hr />
+<p>En ReasonML</p>
+<pre class="language-klipse-reason3">
+let rec sum_table = (table, accumulator) => {
+  if (table == []) {
+    accumulator;
+  } else {
+    let [head, ...tail] = table;
+    sum_table(tail, accumulator + head);
+  };
+};
+
+let result = sum_table([1, 2, 3, 4, 5], 0);
+</pre>
+<hr />
+<p>En OCaml</p>
+<pre class="language-klipse-ocaml">
+let rec sum_table table accumulator =
+  if table == [] then
+    accumulator
+  else
+    let head :: tail = table in
+    sum_table tail (accumulator + head)
+
+let result = sum_table [1; 2; 3; 4; 5] 0
+</pre>
+<hr />
 
 
 
@@ -126,12 +296,18 @@
 
     <script>
       window.klipse_settings = {
-        selector_eval_js: '.language-klipse-eval-js',
-        selector_eval_cpp: '.language-klipse-cpp'
+        selector: ".language-klipse-clojure",
+        selector_eval_js: ".language-klipse-eval-js",
+        selector_eval_cpp: ".language-klipse-cpp",
+        selector_eval_reason_3: ".language-klipse-reason3",
+        selector_eval_ocaml: ".language-klipse-ocaml",
+        selector_eval_ruby: ".language-klipse-eval-ruby",
+        selector_eval_python_client: ".language-klipse-python",
+        selector_eval_php: ".language-klipse-eval-php"
       };
     </script>
 
-    <script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+    <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.5.2"></script>
 
   </body>
 </html>

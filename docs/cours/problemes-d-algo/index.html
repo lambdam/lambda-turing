@@ -9,7 +9,7 @@
     
 
   
-    Langages objet - Lambda-Turing
+    Problèmes d&#x27;algo - Lambda-Turing
   
 
 
@@ -36,7 +36,7 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="https://0tus.github.io/lambda-turing/">Lambda-Turing</a>
       <div class="h4 text-white mr-3">
         
-  Langages objet 
+  Problèmes d&#x27;algo 
 
       </div>
     </nav>
@@ -128,24 +128,6 @@
   <ul class="nav flex-column">
     
       
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#idees-fortes">Idées fortes</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#l-encapsulation">L'encapsulation</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#l-heritage">L'héritage</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://0tus.github.io/lambda-turing/cours/langages-objet/#les-limites-de-l-oriente-objet">Les limites de l'orienté objet</a>
-          </li>
-        
-      
     
   </ul>
 
@@ -158,88 +140,50 @@
 
           
 
-  <h1 id="les-langages-orientes-objet">Les langages orientés objet</h1>
-<h2 id="idees-fortes">Idées fortes</h2>
-<p>La programmation orientée objet apporte des abstractions destinées à structurer les projets.</p>
-<p>Il ne s'agit plus de gérer des cases mémoires ou de déclarer des fonctions que l'on appliquera sur des donnés mais de déclarer des <strong>classes</strong> qui serviront de modèle à des objets qui représenteront des &quot;individus&quot; d'une classe.</p>
+  <h1 id="un-petit-exercice">Un petit exercice</h1>
+<p>Choisissez votre langage et écrivez un bout de code qui :</p>
 <ul>
-<li><strong>L'encapsulation</strong> : on cache l'état interne de l'objet et l'on expose des interfaces pour interagir avec l'objet.</li>
-<li><strong>L'héritage</strong> : on peut déclarer des propriétés sur une classe parente qui seront réutilisées par des sous-classes enfants. L'idée est très proche de la classification des espèces. On peut déclarer des propriétés communes aux mammifères et s'appuyer dessus pour décrire d'un côté les propriétés des félins et de l'autre les propriétés des canidés.</li>
+<li>Prend le tableau suivant en entrée : [1 2 3 4 5 6 7 8 9]</li>
+<li>Filtre les entiers impairs</li>
+<li>Les imcrémente tous de 1</li>
+<li>Fait la somme des entiers</li>
 </ul>
-<p>Au même titre que la fonction en programmation fonctionnelle, ce sont des abstractions. Il n'y a pas de correspondance au niveau de la machine physique.</p>
-<h2 id="l-encapsulation">L'encapsulation</h2>
-<pre class="language-klipse-eval-ruby">
-# Modèle de rectangle
-class Rectangle
-  def initialize(width, height)
-    @width = width
-    @height = height
-  end
-  
-  def width
-    @width
-  end
-  
-  def height
-    @height
-  end
-  
-  def diagonal
-    Math::sqrt(@width**2 + @height**2)
-  end
-  
-  def surface
-    @width * @height
-  end
-end
-
-# Un rectangle particulier (un objet)
-t1 = Rectangle.new(3, 4)
-
-[t1.width, t1.height, t1.diagonal, t1.surface]
+<hr />
+<p>C ou C++</p>
+<pre class="language-klipse-cpp">
+int main()
+{
+  return 0;
+}
 </pre>
-<p>D'un point de vue extérieur, une fois que l'on a l'objet sous la main, je ne me soucie plus de savoir comment est stocké l'information à &quot;l'intérieur&quot; de l'objet.</p>
-<h2 id="l-heritage">L'héritage</h2>
-<pre class="language-klipse-eval-ruby">
-
-class Mammal
-  def initialize(name)
-    @name = name
-  end
-  
-  def name
-    @name
-  end
-end
-
-class Dog < Mammal
-  def make_noise
-    "#{@name} says: Ouaff"
-  end
-end
-
-class Cat < Mammal
-  def make_noise
-    "#{@name} says: Miaou"
-  end
-end
-
-medor = Dog.new("Medor")
-
-felix = Cat.new("Felix")
-
-# Fais parler le chien
-
-# Fais parler le chat
-
-"rien"
-
+<hr />
+<p>Javascript</p>
+<pre class="language-klipse-eval-js">
 </pre>
-<h2 id="les-limites-de-l-oriente-objet">Les limites de l'orienté objet</h2>
-<p>Les deux langages objets les plus connus actuellement sont C++ (1983) et Java (1995).</p>
-<p>Un des gros reproches fait à ces langages est que même si la structuration en classes semble intuitive (on pense aux espèces), l'abstraction apporte son lot de cas particulier. Un cas connu est le choix, au niveau du langage, du simple héritage (une classe a exactement un parent) ou du multi-héritage (une classe peut avoir plusieurs parents). On pense à l'ornithorynque...</p>
-<p>Les gros systèmes objet sont réputés durs à faire évoluer.</p>
-<p>Il est à noter aussi que la plupart des langages de scripts (langages non-compilés &quot;légers&quot; et accessibles : Python, Ruby, Javascript, Perl...) offrent la possibilité de faire de l'orienté objet.</p>
+<hr />
+<p>Clojure</p>
+<pre class="language-klipse-clojure">
+</pre>
+<hr />
+<p>OCaml</p>
+<pre class="language-klipse-ocaml">
+</pre>
+<hr />
+<p>ReasonML</p>
+<pre class="language-klipse-reason3">
+</pre>
+<hr />
+<p>Python</p>
+<pre class="language-klipse-python">
+</pre>
+<hr />
+<p>Ruby</p>
+<pre class="language-klipse-eval-ruby">
+</pre>
+<hr />
+<p>PHP</p>
+<pre class="language-klipse-eval-php">
+</pre>
 <hr />
 
 
