@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: https://lambdam.github.io/lambda-turing/sitemap.xml

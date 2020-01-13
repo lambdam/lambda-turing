@@ -2,8 +2,8 @@ default:
 	@echo "Choose a task"
 
 dev:
-	gutenberg serve
+	zola serve
 
 build:
 	mkdir	-p docs
-	gutenberg build --output-dir docs/
+	zola build --output-dir docs/

@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://0tus.github.io/lambda-turing/"
+base_url = "https://lambdam.github.io/lambda-turing/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     {% block title %}
       <title>Lambda-Turing</title>
     {% endblock title %}
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <link href="{{ config.base_url | safe }}css/dashboard.css" rel="stylesheet">
-
     <style type="text/css">
       h2 {
         margin-top: 1.5rem;
@@ -26,7 +22,6 @@
       }
     </style>
   </head>
-
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ config.base_url | safe }}">Lambda-Turing</a>
@@ -42,11 +37,9 @@
           <div class="sidebar-sticky">
 
             {% block summary %}
-
               <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"> 
                 <span>Sommaire</span> 
               </h6>
-
               <ul class="nav flex-column mb-2">
                 {% set cours_section = get_section(path="cours/_index.md") %}
                 {% for page in cours_section.pages %}
@@ -57,7 +50,6 @@
                   </li>
                 {% endfor %}
               </ul>
-
             {% endblock summary %}
 
             {% block toc %}
@@ -65,15 +57,10 @@
 
           </div>
         </nav>
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-
           {% block content %}
-
             <h1 class="text-center">Lambda-Turing</h1>
-
             <p class="h2 text-center mb-4">Petite histoire interactive des langages de programmation</p>
-
             {% set cours_section = get_section(path="cours/_index.md") %}
             {% for page in cours_section.pages %}
               <div class="mb-4">
@@ -83,24 +70,17 @@
               </div>
             {% endfor %}
           {% endblock content %}
-
           {# {% block dev_data %} #}
           {# {% endblock dev_data %} #}
-
         </main>
       </div>
     </div>
-
     {# Bootstrap core JavaScript #}
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
     {# Klipse #}
-
     <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
-
     <script>
       window.klipse_settings = {
         selector: ".language-klipse-clojure",
@@ -113,8 +93,6 @@
         selector_eval_php: ".language-klipse-eval-php"
       };
     </script>
-
     <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.5.2"></script>
-
   </body>
 </html>
