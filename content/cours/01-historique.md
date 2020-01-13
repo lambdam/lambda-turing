@@ -42,7 +42,7 @@ Plusieurs approches ont vu le jour :
 
 Deux approches ont durablement marqué la manière dont nous interagissons avec les ordinateurs :
 
-- La machine d'Alan Turing qui pose les fondements des langages dit impératifs.
+- La machine d'Alan Turing qui pose les fondements des langages dits impératifs.
 - Le lambda-calcul d'Alonzo Church qui pose les fondements des langages dits fonctionnels.
 
 
